@@ -1,15 +1,10 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "soso.py",
-      "use": "@vercel/python"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/static/full.html" 
-    }
-  ]
+     "version": 2,
+     "routes": [
+       {
+         "src": "/",
+         "dest": "/static/full.html"
+       }
+     ]
 }
+   

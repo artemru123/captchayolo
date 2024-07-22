@@ -91,7 +91,7 @@
   <script>
     function displayCaptcha() {
       const captchaImage = document.getElementById('captcha-image');
-      fetch("http://127.0.0.1:5000/captcha")
+      fetch("http://213.171.14.201:5000/captcha")
         .then(response => response.blob())
         .then(blob => {
           const img = document.createElement('img');
@@ -105,7 +105,7 @@
       const userCaptcha = document.getElementById('captcha-input').value;
       const errorMessage = document.getElementById('error-message');
 
-      fetch("http://127.0.0.1:5000/check_captcha", {
+      fetch("http://213.171.14.201:5000/check_captcha", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded"

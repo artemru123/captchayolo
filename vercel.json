@@ -1,10 +1,9 @@
 {
-     "version": 2,
-     "routes": [
-       {
-         "src": "/",
-         "dest": "/static/full.html"
-       }
-     ]
+  "version": 2,
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/static/full.html" 
+    }
+  ]
 }
-   

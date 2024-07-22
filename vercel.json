@@ -1,28 +1,16 @@
 {
-  "version": 2,
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/html/index.html" 
-    },
-    {
-      "src": "/run_soso",
-      "dest": "/soso.py",
-      "methods": ["GET", "POST"],
-      "headers": {
-        "Content-Type": "application/x-python-code"
-      },
-      "runtime": "python3"
-    },
-    {
-      "src": "/static/(.*)",
-      "dest": "/static/$1",
-      "methods": ["GET", "POST"]
-    },
-    {
-      "src": "/html/(.*)",
-      "dest": "/html/$1",
-      "methods": ["GET", "POST"]
-    }
-  ]
+       "version": 2,
+       "routes": [
+         {
+           "src": "/static/full.html",
+           "dest": "/static/full.html"
+         },
+         {
+           "src": "/api/soso/:path*",
+           "dest": "/api/soso.js" 
+         }
+       ]
+
+
+  
 }

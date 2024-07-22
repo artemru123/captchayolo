@@ -9,7 +9,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/YOLOCAPA.html"
+      "dest": "/full.html"
     }
   ]
 }

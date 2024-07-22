@@ -1,16 +1,16 @@
 {
-       "version": 2,
-       "routes": [
-         {
-           "src": "/static/full.html",
-           "dest": "/static/full.html"
-         },
-         {
-           "src": "/api/soso/:path*",
-           "dest": "/api/soso.js" 
-         }
-       ]
-
-
-  
+     "version": 2,
+     "routes": [
+       {
+         "src": "/",
+         "dest": "/static/full.html"
+       }
+     ]
+  "version": 2,
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/static/full.html" 
+    }
+  ]
 }

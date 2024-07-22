@@ -6,17 +6,13 @@ from PIL import Image, ImageDraw, ImageFont
 from flask_cors import CORS  # Добавить импорт
 from flask_session import Session  # Импорт библиотеки для сессий
 
-app = Flask(__name__)
+app = Flask("soso")  # Используйте строку "soso" 
 CORS(app)
 app.config['SECRET_KEY'] = secrets.token_urlsafe(32)
-
 
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
-
-
-
 
 @app.route('/captcha')
 def generate_captcha():
@@ -34,22 +30,7 @@ def generate_captcha():
         bbox = font.getbbox(digit)
         x += bbox[2] - bbox[0] + 5
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    # Добавление шума
     noise_intensity = 10
     for i in range(noise_intensity):
         x = random.randint(0, image.width - 1)
@@ -57,6 +38,21 @@ def generate_captcha():
         image.putpixel((x, y), (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)))
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    # Деформация пикселей
     for i in range(image.width):
         for j in range(image.height):
             r, g, b = image.getpixel((i, j))
@@ -66,7 +62,7 @@ def generate_captcha():
                 b = min(255, b + random.randint(-20, 20))
                 image.putpixel((i, j), (r, g, b))
 
-
+    # Сдвиг пикселей
     for i in range(image.width - 1):
         for j in range(image.height):
             if random.random() < 0.1:
@@ -79,7 +75,7 @@ def generate_captcha():
                 r, g, b = image.getpixel((i, j + 1))
                 image.putpixel((i, j), (r, g, b))
 
-
+    # Дополнительные линии и прямоугольники
     for _ in range(3):
         x1 = random.randint(0, image.width)
         y1 = random.randint(0, image.height)
@@ -109,11 +105,9 @@ def check_captcha():
         return 'success'
     else:
         return 'error'
+
 @app.route('/html/<path:filename>')
 def serve_html(filename):
     """Serves HTML files from the specified directory."""
     return send_from_directory('C:/Users/22835/Desktop/html', filename)
 
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)

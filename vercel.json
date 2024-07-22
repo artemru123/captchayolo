@@ -9,7 +9,7 @@
   "routes": [
     {
       "src": "/",
-      "dest": "/full.html" 
+      "dest": "/static/full.html" 
     }
   ]
 }
